@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Employee;
+use App\Models\Goal;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,9 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Employee::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Employee::factory()->count(10)->create();
+        Goal::factory()->count(10)->create();
     }
 }
